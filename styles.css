@@ -1,0 +1,42 @@
+/*
+ * Custom CSS
+ */
+
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table td {
+  border: none;
+}
+
+.table thead th {
+  font-weight: 700;
+}
+
+table thead {
+  background-color: rgb(255, 0, 111);;
+}
+
+tbody tr td:first-child {
+  color: rgb(255, 0, 111);
+}
+
+.btn-secondary {
+  background-color: rgb(255, 0, 111);
+  border: none;
+}
