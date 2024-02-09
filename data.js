@@ -1,5 +1,32 @@
 var data = [
     {
+        header: "WORKFLOW.",
+        records: [
+            ["git checkout master", "Always start from master branch."],
+            ["git pull", "Update your local Git repository with any changes from remote."],
+            ["git checkout -b branch_name", "Create local feature branch."],
+            ["git add file_name", "Stage a file."],
+            ["git commit -m commit_name", "Make a new commit"],
+            ["git push origin branch_name", "Push branch to remote (for code review and merge)."],
+            ["git checkout master", "Alternatively, merge to local master branch and push to remote."],
+            ["git merge branch_name", "Merge local feature branch to local master branch"],
+            ["git push", "Push master branch to remote"]
+        ]
+    },
+    {
+        header: "TROUBLESHOOT.",
+        records: [
+            ["git status", "View currently staged, modified and untracked files."],
+            ["git commit --amend --no-edit", "Modify current commit."],
+            ["git rebase master", "Rebase your local branch with changes in the local master branch"],
+            ["git reset HEAD~1", "Reset latest commit (file changes become unstaged)."],
+            ["git reset HEAD~1 --hard", "Reset latest commit as well as remove all file changes (CAUTION!)."],
+            ["git restore <filename>", "Reset current changes to a file (CAUTION!)."],
+            ["git reset [--hard] <commit-before-merge>", "Reset to a commit before a merge."],
+            ["git revert -m 1 <merge-commit-hash>", "Revert a merge commit."]
+        ]
+    },
+    {
         header: "BRANCHES.",
         records: [
             ["git branch", "List all local branches."],
@@ -46,12 +73,13 @@ var data = [
     {
         header: "STASHES.",
         records: [
-            ["git stash save 'stash name' && git stash", "Save changes to a stash."],
+            ["git stash", "Save existing changes to a stash."],
+            ["git stash pop", "Apply a stash and delete it from stash list."],
+            ["git stash save 'stash name' && git stash", "Save changes to a named stash."],
             ["git stash list", "List all stashes."],
-            ["git stash pop", "Apply a stash and delete it from stash list."]
+        
         ]
-    }
+    },
 ];
 
-// Making data globally accessible
 window.data = data;
