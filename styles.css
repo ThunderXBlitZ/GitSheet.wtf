@@ -26,14 +26,17 @@ body {
 
 .table thead th {
   font-weight: 700;
-}
-
-table thead {
-  background-color: rgb(255, 0, 111);;
+  border-color: rgb(255, 0, 111);
+  border-radius: 8px;
 }
 
 tbody tr td:first-child {
   color: rgb(255, 0, 111);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+tbody tr td:nth-child(2) {
+  color: rgb(50, 50, 50)
 }
 
 .btn-secondary {
