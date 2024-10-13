@@ -8,17 +8,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerRow = document.createElement('tr');
     const headerCell = document.createElement('th');
     headerCell.textContent = headerText;
+    headerCell.colSpan = 3;
     headerRow.appendChild(headerCell);
     header.appendChild(headerRow);
     return header;
   }
   
+  function createSection(sectionData) {
+    const header = createHeader(sectionData.header);
+    table.appendChild(header);
+
+    const tbody = document.createElement('tbody');
+    sectionData.records.forEach((recordsData) => {
+      const row = createRow(recordsData);
+      addButtonToRow(row);
+      tbody.appendChild(row);
+    });
+    return tbody;
+  }
+
   function createRow(cells) {
     const row = document.createElement('tr');
   
     cells.forEach((cellData) => {
       const cell = document.createElement('td');
-      cell.textContent = cellData;
+      cell.innerHTML = cellData;
       row.appendChild(cell);
   
       if (cellData === cells[0]) { // Assuming first cell is copyable
@@ -46,16 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
     table.innerHTML = '';
   
     data.forEach((sectionData) => {
-      const header = createHeader(sectionData.header);
-      table.appendChild(header);
-  
-      const tbody = document.createElement('tbody');
-      sectionData.records.forEach((recordsData) => {
-        const row = createRow(recordsData);
-        addButtonToRow(row);
-        tbody.appendChild(row);
-      });
-  
+      tbody = createSection(sectionData);
       table.appendChild(tbody);
+
+      linebreak = document.createElement("br");
+      table.appendChild(linebreak);
     });
   }
