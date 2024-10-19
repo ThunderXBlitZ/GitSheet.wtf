@@ -6,6 +6,10 @@
   --bs-body-bg: var(--bs-gray-100);
 }
 
+body {
+  padding: 24px;
+}
+
 h1 {
   font-size: 36px;
   font-family: 'Montserrat', sans-serif;
