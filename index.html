@@ -1,41 +1,451 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitSheet.WTF</title>
-    <meta name="description" content="A quick cheatsheet for essential Git workflows. Step-by-step guide and commands for beginners. Master Git today!">
-    <meta name="keywords" content="Git tutorial, Git cheatsheet, Git workflow, Git commands, learn Git, Git version control">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <h1 style="padding-bottom: 0.5rem;"><i class="fa fa-laptop" style="font-size:48px; padding-right:0.5rem"></i>GitSheet</h1>
-    </header>
-    <article>
-      <section>
-        <div>A dead simple git cheatsheet, originally by <a href="https://twitter.com/@tiivikm">@tiivikm</a>,
-          recreated by <a href="https://github.com/ThunderXBlitZ">@JiaWeiGoh</a>!
-        </div>
-        <div style="padding-top:16px">
-          <a href='https://ko-fi.com/B0B014O6OC' target='_blank' style="margin-top:100px"><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-        </div>
-      </section>
-      <br>
-      <section>
-        <table class="table" id="table"></table>
-      </section>
-    </article>
-    <footer>
-      <p>GitSheet.WTF, a simple Git Tutorial Website. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitSheet.WTF</title>
+  <link rel="icon" type="image/x-icon" href="favico.ico">
+  <meta name="description"
+    content="A dead simple Git cheatsheet with essential commands for developers. Quickly reference Git commands in a structured table format.">
+  <meta name="keywords"
+    content="git cheatsheet, git commands, git guide, git tutorial, git reference">
+  <meta property="og:title"
+    content="GitSheet.WTF - The Ultimate Git Cheatsheet">
+  <meta property="og:description"
+    content="A dead simple Git cheatsheet with all the essential commands.">
+  <meta property="og:image" content="https://gitsheet.wtf/preview.png">
+  <meta property="og:url" content="https://gitsheet.wtf/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js">
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 style="padding-bottom: 0.5rem;"><i class="fa fa-laptop"
+        style="font-size:48px; padding-right:0.5rem"></i>GitSheet</h1>
+  </header>
+  <article>
+    <section>
+      <div>
+        <span style="margin-right:8px">
+          A dead simple git cheatsheet, originally by <a
+            href="https://twitter.com/@tiivikm">@tiivikm</a>,
+          recreated by <a
+            href="https://github.com/ThunderXBlitZ">@JiaWeiGoh</a>!
+          <a href='https://ko-fi.com/B0B014O6OC' target='_blank'
+            style="margin-top:100px"></a>
+        </span>
+        <img height='36' style='border:0px;height:36px'
+          src='https://storage.ko-fi.com/cdn/kofi4.png?v=3' border='0'
+          alt='Buy Me a Coffee at ko-fi.com' /></a>
+      </div>
+    </section>
+    <br>
+    <br>
+    <section>
+      <h3 id="workflow">WORKFLOW<a href="#workflow"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git checkout <i>master</i></td>
+            <td>Always start from master branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git pull</td>
+            <td>Update your local Git repository with any changes from remote.
+            </td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout -b <i>branch_name</i></td>
+            <td>Create local feature branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git add <i>file_name</i></td>
+            <td>Stage a file.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git commit -m <i>commit_name</i></td>
+            <td>Make a new commit.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git push origin <i>branch_name</i></td>
+            <td>Push branch to remote (for code review and merge).</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout <i>master</i></td>
+            <td>Alternatively, merge to local master branch and push to remote.
+            </td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git merge <i>branch_name</i></td>
+            <td>Merge local feature branch to local master branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git push</td>
+            <td>Push master branch to remote.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="troubleshoot">TROUBLESHOOT<a href="#troubleshoot"><i
+            class="fa fa-link" aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git status</td>
+            <td>View currently staged, modified and untracked files.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git commit --amend --no-edit</td>
+            <td>Modify current commit.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git rebase <i>master</i></td>
+            <td>Rebase your local branch with changes in the local master
+              branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git rebase -i HEAD~<i>3</i></td>
+            <td>Interactive rebase for the last 3 commits.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git reset HEAD~1</td>
+            <td>Reset latest commit (file changes become unstaged).</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git reset HEAD~1 --hard</td>
+            <td>Reset latest commit as well as remove all file changes
+              <b>CAUTION</b>.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git restore <i>filename</i></td>
+            <td>Reset current changes to a file <b>CAUTION!</b>.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git reset [--hard] <commit-before-merge></td>
+            <td>Reset to a commit before a merge.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git revert -m 1 <merge-commit-hash></td>
+            <td>Revert a merge commit.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git cherry-pick <i>commit_hash<i></td>
+            <td>Apply the changes introduced by an existing commit.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="branches">BRANCHES<a href="#branches"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git branch</td>
+            <td>List all local branches.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git branch -a</td>
+            <td>List remote and local branches.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout -b <i>branch_name</i></td>
+            <td>Create a local branch and switch to it.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout <i>branch_name</i></td>
+            <td>Switch to an existing branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git push <i>origin</i> <i>branch_name</i></td>
+            <td>Push branch to remote.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git branch -m <i>new_name</i></td>
+            <td>Rename current branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git branch -d <i>branch_name</i></td>
+            <td>Delete a local branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git push -d <i>origin</i> <i>branch_name</i></td>
+            <td>Delete a remote branch.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="logs">LOGS<a href="#logs"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git log --oneline</td>
+            <td>Show commit history in single lines.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git log -2</td>
+            <td>Show commit history for last N commits.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git log -p -2</td>
+            <td>Show commit history for last N commits with diff.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git diff</td>
+            <td>Show all local file changes in the working tree.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git diff <i>filename</i></td>
+            <td>Show changes made to a file.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git blame <i>filename</i></td>
+            <td>Show who changed what & when in a file.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git remote show <i>origin</i></td>
+            <td>Show remote branches and their mapping to local.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="cleanup">CLEANUP<a href="#cleanup"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git clean -f</td>
+            <td>Delete all untracked files.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git clean -df</td>
+            <td>Delete all untracked files and directories.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout -- .</td>
+            <td>Undo local modifications to all files.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git reset HEAD <i>filename</i></td>
+            <td>Unstage a file.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="stashes">STASHES<a href="#stashes"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git stash</td>
+            <td>Save existing changes to a stash.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git stash pop</td>
+            <td>Apply a stash and delete it from stash list.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git stash save '<i>stash name</i>' && git stash</td>
+            <td>Save changes to a named stash.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git stash list</td>
+            <td>List all stashes.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+      <h3 id="tags">TAGS<a href="#tags"><i class="fa fa-link"
+            aria-hidden="true"></i></a></h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>git pull --tags</td>
+            <td>Get remote tags.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git checkout <i>tag_name</i></td>
+            <td>Switch to an existing tag.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git tag</td>
+            <td>List all tags.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git tag -a <i>tag_name</i> -m '<i>tag message</i>'</td>
+            <td>Create a new tag.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+          <tr>
+            <td>git push --tags</td>
+            <td>Push all tags to remote repo.</td>
+            <td><button class="btn btn-secondary"
+                onclick="copyToClipboard(this)">Copy</button></td>
+          </tr>
+        </tbody>
+      </table><br><br>
+
+    </section>
+  </article>
+  <footer>
+    <p>GitSheet.WTF, a simple Git Tutorial Website. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
