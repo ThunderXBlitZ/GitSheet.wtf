@@ -1,6 +1,14 @@
 /*
  * Custom CSS
  */
+ 
+ @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; /* Ensures the text remains visible while loading */
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+}
 
 :root {
   --bs-body-bg: var(--bs-gray-100);
